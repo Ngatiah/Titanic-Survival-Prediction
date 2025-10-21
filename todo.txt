@@ -1,0 +1,10 @@
+🔹 2. Titanic Survival Prediction (Classification)
+
+Dataset: Titanic: Machine Learning from Disaster
+Why: A great starter classification dataset with both categorical and numeric features.
+What to do:
+Predict survival (Survived) using passenger info.
+Handle missing values in Age and Cabin.
+Feature creation: Family size, Title from Name.
+Evaluate models: Logistic Regression, Random Forest.
+Skills practiced: Data Cleaning, Imputation, Classification, Feature Engineering.
