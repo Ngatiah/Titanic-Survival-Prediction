@@ -39,6 +39,8 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
+from ydata_profiling import ProfileReport
+
 
 
 file_path = './../data/tested.csv'
@@ -99,7 +101,13 @@ data["Title"] = data["Title"].replace(title_mapping)
 # +1 is the passenger themself
 data["Family Size"] = data["SibSp"] + data["Parch"] + 1
 # print(data[["SibSp", "Parch", "Family Size"]].head(10)) 
+# Generate pandas-profiling report
+profile = ProfileReport(data, title="Titanic Dataset EDA Report", explorative=True)
 
+# Save report as HTML
+profile.to_file("titanic_pandas_profiling_report.html")
+
+print("Pandas Profiling EDA report generated successfully!")
 
 # PREDICTOR
 X = data.drop(['Survived'],axis=1)
